@@ -100,4 +100,4 @@ NumberOfShades 的范围在2-256。<br>
 从技术上说，任何灰度算法都可以计算AverageValue，它仅仅提供一个初始灰度的估计值。<br>
 “+ 0.5” 是一个可选参数，用于模拟四舍五入。<br>
 # 参考来源
-* [Seven grayscale conversion algorithms (with pseudocode and VB6 source code)}http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
+* [Seven grayscale conversion algorithms (with pseudocode and VB6 source code)}(http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/)
