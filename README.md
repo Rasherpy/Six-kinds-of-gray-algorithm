@@ -76,4 +76,28 @@ Gray = Math.min(Red, Green, Blue)
 ```
 最大值分解提供了更明亮的图，而最小值分解提供了更黑暗的图。
 # 算法五-单一通道
+图片变灰更快捷的方法，这个方法不用做任何计算，取一个通道的值直接作为灰度值。
+```
+Gray = Red
+```
+或者
+```
+Gray = Green
+```
+或者
+```
+Gray = Blue
+```
+大多数数码相机都用这个算法生成灰度图片。很难预测这种转换的结果，所以这种算法多用于艺术效果。
 # 算法六-自定义灰度阴影
+这是到目前为止最有趣的算法，允许用户提供一个灰色阴影值，值的范围在2-256。2的结果是一张全白的图片，256的结果和算法1一样。该算法通过选择阴影值来工作，它的公式有点复杂。
+```
+ConversionFactor = 255 / (NumberOfShades - 1)
+AverageValue = (Red + Green + Blue) / 3
+Gray = Math.round((AverageValue / ConversionFactor) + 0.5) * ConversionFactor
+```
+NumberOfShades 的范围在2-256。<br>
+从技术上说，任何灰度算法都可以计算AverageValue，它仅仅提供一个初始灰度的估计值。<br>
+“+ 0.5” 是一个可选参数，用于模拟四舍五入。<br>
+# 参考来源
+* 【Seven grayscale conversion algorithms (with pseudocode and VB6 source code)】http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
